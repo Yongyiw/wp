@@ -14,6 +14,12 @@
  * @package WordPress
  */
 
+
+if( $_SERVER['SERVER_NAME'] == 'wp.dev'){
+	define('WP_HOME','wp.dev');
+	define('WP_SITEURL','/');
+}
+
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
 define('DB_NAME', 'yongyiwc_wo6274');
