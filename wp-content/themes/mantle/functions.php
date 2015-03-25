@@ -325,6 +325,7 @@ function mantle_custom_css()
 	endif;
 	
 	$return .= '.nav-above-header {padding-top: ' . $menu_height . 'px}';
+	$return .= '.stickynav.nav-below-header .site-header {margin-bottom: ' . $menu_height . 'px}';
 	
 	if ( 'contained-nav' == $generate_settings['nav_layout_setting'] ) :
 		$return .= '@media screen and (min-width: 768px) { body.stickynav.nav-below-header #site-navigation, body.nav-above-header #site-navigation, body.stickynav.nav-above-header #site-navigation { left: 50%; width: 100%; max-width: ' . $generate_settings['container_width'] . 'px; margin-left: -' . $generate_settings['container_width'] / 2 . 'px; } }';

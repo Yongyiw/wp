@@ -1360,7 +1360,6 @@ class wpdb {
 		$client_flags = defined( 'MYSQL_CLIENT_FLAGS' ) ? MYSQL_CLIENT_FLAGS : 0;
 
 		if ( $this->use_mysqli ) {
-
 			$this->dbh = mysqli_init();
 
 			// mysqli_real_connect doesn't support the host param including a port or socket

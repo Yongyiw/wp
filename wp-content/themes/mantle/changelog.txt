@@ -10,6 +10,11 @@ Changelog Legend:
 
 ----
 
+(3/11/2015) - 1.2
+[!] Fixed sticky nav jumping when navigation is below header
+
+----
+
 (12/20/2014) - 1.1
 [+] Navigation search enabled by default
 [*] Sticky navigation stays contained when navigation is contained
