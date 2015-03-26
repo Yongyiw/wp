@@ -78,7 +78,7 @@ function dbs_post_actions() {
 		case 'pull' :
 			try {
 				//send post request with secret
-				
+
 				$result = dbs_post($_REQUEST['url'], 'dbs_pull', array('secret' => $tokens[$_REQUEST['url']]));
 				if ($result == 'You don\'t know me') {
 					$gotoUrl = dbs_url(array('error' => 'Invalid site token'));
@@ -136,6 +136,7 @@ function dbs_post_actions() {
 					'sql' => $sql
 				));
 
+
 				if ($result == 'You don\'t know me') {
 					$gotoUrl = dbs_url(array('error' => 'Invalid site token'));
 				} elseif ($result == '0') {
@@ -146,6 +147,7 @@ function dbs_post_actions() {
 					$gotoUrl = dbs_url(array('error' => 'Something may be wrong'));
 				}
 			} catch (RuntimeException $ex) {
+
 				$gotoUrl = dbs_url(array('error' => 'Remote site not accessible (HTTP ' . $ex->getCode() . ')'));
 			}
 			wp_redirect($gotoUrl);
