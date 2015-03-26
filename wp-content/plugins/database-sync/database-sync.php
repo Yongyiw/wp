@@ -78,6 +78,7 @@ function dbs_post_actions() {
 		case 'pull' :
 			try {
 				//send post request with secret
+				
 				$result = dbs_post($_REQUEST['url'], 'dbs_pull', array('secret' => $tokens[$_REQUEST['url']]));
 				if ($result == 'You don\'t know me') {
 					$gotoUrl = dbs_url(array('error' => 'Invalid site token'));
@@ -127,13 +128,14 @@ function dbs_post_actions() {
 			ob_start();
 			dbs_mysqldump();
 			$sql = ob_get_clean();
-
+			
 			try {
 				//send post request with secret and SQL data
 				$result = dbs_post($_REQUEST['url'], 'dbs_push', array(
 					'secret' => $tokens[$_REQUEST['url']],
 					'sql' => $sql
 				));
+
 				if ($result == 'You don\'t know me') {
 					$gotoUrl = dbs_url(array('error' => 'Invalid site token'));
 				} elseif ($result == '0') {
